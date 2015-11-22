@@ -3,17 +3,31 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Hexo</title>
+  <title>Node.js下Mysql数据库连接 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="MySQL是一个关系型数据库管理系统，关联数据库将数据保存在不同的表中，而不是将所有的数据放在一个大仓库内，这样就增加了速度并提高了灵活性。
+创建mysql连接与其他模块一样，需要在项目根目录下安装mysql模块
+1# vim /etc/profile
+
+MYSQL有server和client两个模块，client是用来连接server的。关于两者的区别，mysql-server相当于服务器，管理">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Node.js下Mysql数据库连接">
+<meta property="og:url" content="http://yoursite.com/2015/11/22/nodejs2/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description">
+<meta property="og:description" content="MySQL是一个关系型数据库管理系统，关联数据库将数据保存在不同的表中，而不是将所有的数据放在一个大仓库内，这样就增加了速度并提高了灵活性。
+创建mysql连接与其他模块一样，需要在项目根目录下安装mysql模块
+1# vim /etc/profile
+
+MYSQL有server和client两个模块，client是用来连接server的。关于两者的区别，mysql-server相当于服务器，管理">
+<meta property="og:image" content="http://images2015.cnblogs.com/blog/758352/201511/758352-20151119110043811-402406524.png">
+<meta property="og:updated_time" content="2015-11-22T12:29:10.669Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
-<meta name="twitter:description">
+<meta name="twitter:title" content="Node.js下Mysql数据库连接">
+<meta name="twitter:description" content="MySQL是一个关系型数据库管理系统，关联数据库将数据保存在不同的表中，而不是将所有的数据放在一个大仓库内，这样就增加了速度并提高了灵活性。
+创建mysql连接与其他模块一样，需要在项目根目录下安装mysql模块
+1# vim /etc/profile
+
+MYSQL有server和client两个模块，client是用来连接server的。关于两者的区别，mysql-server相当于服务器，管理">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -190,119 +204,7 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap">
-  
-    <article id="post-jquery1" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/11/22/jquery1/" class="article-date">
-  	<time datetime="2015-11-22T12:36:57.904Z" itemprop="datePublished">2015-11-22</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/11/22/jquery1/">jquery之.outerWidth()</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>.outerWidth( [includeMargin ] )中文API文档中是这样解释的：<br>获取元素集合中第一个元素的当前计算宽度值,包括padding，border和选择性的margin。（愚人码头注：返回一个整数（不包含“px”）表示的值，或如果在一个空集合上调用该方法，则会返回 null。）</p>
-<p>它有一个可选参数，且该参数只能为布尔值，当传入的参数为ture时，他返回的宽度值为元素的width+padding+border+margin，但是当传入的参数为false时，他返回的宽度值为元素的width+padding+border，相当于元素在IE盒子模型中的宽度，如果不传参数相当于默认为false。</p>
-<p>.outerHeight()与.outerWidth()用法基本一致</p>
-<p><img src="http://images2015.cnblogs.com/blog/758352/201511/758352-20151104202623461-1273049679.png" alt="图jquery1.1" title="图jquery1.1"></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-css1" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/11/22/css1/" class="article-date">
-  	<time datetime="2015-11-22T12:34:13.978Z" itemprop="datePublished">2015-11-22</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/11/22/css1/">CSS ::selection 选中文字效果</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>::selection伪元素，用来定义用户鼠标已选择内容的样式</p>
-<h2 id="测试代码：">测试代码：</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">p::selection&#123; </span><br><span class="line">  background: <span class="comment">#45caaf; </span></span><br><span class="line">  color: <span class="comment">#fff;</span></span><br><span class="line">&#125; </span><br><span class="line">p::-moz-selection&#123; </span><br><span class="line">  background: <span class="comment">#45caaf; </span></span><br><span class="line">  color: <span class="comment">#fff;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="效果图：">效果图：</h2><p><img src="http://images2015.cnblogs.com/blog/758352/201511/758352-20151103135351336-211621706.png" alt="图css1.1" title="图css1.1"></p>
-<hr>
-<p>从下面可以看出兼容性上还是比较好的，各大主流浏览器都支持，需要注意的是不支持IE8以下的版本，firefox浏览器下需要添加-moz-前缀，chrome浏览器无须添加前缀。</p>
-<p><img src="http://images2015.cnblogs.com/blog/758352/201511/758352-20151103135830071-1766029761.png" alt="图css1.2" title="图css1.2"></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-nodejs2" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-nodejs2" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2015/11/22/nodejs2/" class="article-date">
@@ -318,12 +220,19 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/11/22/nodejs2/">Node.js下Mysql数据库连接</a>
+    <h1 class="article-title" itemprop="name">
+      Node.js下Mysql数据库连接
     </h1>
   
 
       </header>
+      
+      <div class="article-info article-info-post">
+        
+        
+
+        <div class="clearfix"></div>
+      </div>
       
     
     <div class="article-entry" itemprop="articleBody">
@@ -361,185 +270,71 @@
       
     </div>
     
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
   </div>
   
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-nodejs1" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/11/22/nodejs1/" class="article-date">
-  	<time datetime="2015-11-22T12:16:20.624Z" itemprop="datePublished">2015-11-22</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
     
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
+<nav id="article-nav">
+  
+    <a href="/2015/11/22/css1/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
         
+          CSS ::selection 选中文字效果
+        
+      </div>
+    </a>
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/11/22/nodejs1/">LINUX下用Nginx和Node.js构建一个简单的项目</a>
-    </h1>
   
+    <a href="/2015/11/22/nodejs1/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">LINUX下用Nginx和Node.js构建一个简单的项目</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
 
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>由于我之前租了一个阿里云服务器，最近又开始学学Node.js，因此准备写点东西把过程记录一下。至于服务器上的Web环境安装阿里云有十分详细的安装说明，这里就略过了。。。</p>
-<p>以下是我的Web环境：</p>
-<p>服务器系统为LINUX 64位</p>
-<p>Web:nginx</p>
-<p>Nginx:1.4.4</p>
-<p>Php:5.3.29</p>
-<p>Mysql:5.1.73</p>
-<h2 id="安装Nodejs">安装Nodejs</h2><p>首先需要查看系统的Python和Make版本信息是否符合Node.js的安装环境。指令如下：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># python</span></span><br><span class="line"><span class="comment"># make -v</span></span><br></pre></td></tr></table></figure>
-<hr>
-<p>在官网下载<a href="https://nodejs.org/en/" target="_blank" rel="external">nodejs</a>的压缩包，我的系统是LINUX64位于是下载如图对应的文件</p>
-<p><img src="http://images2015.cnblogs.com/blog/758352/201511/758352-20151102211749602-70810128.png" alt="图1.1" title="图1.1"></p>
-<hr>
-<p>下载完成后得到一个文件名为node-v4.2.1-linux-x64.tar.gz的压缩文件，将该文件传到服务器上，输入</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#  tar xvf node-v4.2.1-linux-x64.tar.gz</span></span><br></pre></td></tr></table></figure>
-<hr>
-<p>解压后得到如图所示的文件夹</p>
-<p><img src="http://images2015.cnblogs.com/blog/758352/201511/758352-20151102211841383-1803123096.png" alt="图1.2" title="图1.2"></p>
-<hr>
-<p>由于下载的是已经编译好的文件，bin文件夹中已经存在node以及npm，不过不是全局的，所以将这个设置为全局就好了。</p>
-<p>设置全局变量：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># vim /etc/profile</span></span><br></pre></td></tr></table></figure>
-<p><img src="http://images2015.cnblogs.com/blog/758352/201511/758352-20151102212001258-2017079884.png" alt="图1.3" title="图1.3"></p>
-<hr>
-<p>在最后添加一句</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> PATH=<span class="string">"/root/node-v4.2.1-linux-x64/bin:<span class="variable">$PATH</span>"</span></span><br></pre></td></tr></table></figure>
-<hr>
-<p>按esc ，输入:wq，回车，这样就保存了</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># source /etc/profile</span></span><br></pre></td></tr></table></figure>
-<p><img src="http://images2015.cnblogs.com/blog/758352/201511/758352-20151102212036008-379952505.png" alt="图1.4" title="图1.4"></p>
-<hr>
-<p>没有报错则输入</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># echo $PATH</span></span><br></pre></td></tr></table></figure>
-<hr>
-<p>如果如图有了添加的那一句就成功了</p>
-<p><img src="http://images2015.cnblogs.com/blog/758352/201511/758352-20151102212135274-722429969.png" alt="图1.4" title="图1.4"></p>
-<hr>
-<p>这样就把bin文件夹下的node 和 npm模块设为全局了</p>
-<p>在任意位置输入，显示如下</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># node -v</span></span><br></pre></td></tr></table></figure>
-<hr>
-<p>到这里，Node.js就成功装到LINUX下了。</p>
-<h2 id="安装express">安装express</h2><p>在装完Node.js后，接下来就开始安装Express框架</p>
-<p>Express是一个Node.js的Web开源框架，适合入门学习的开发者</p>
-<p>主要集成了Web的http服务器的创建、静态文件管理、服务器url请求处理、GET和POST请求分发、Session处理等功能</p>
-<p>使用NodeJS几乎是必装express框架，使用下面命令即可安装：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># npm install express -gd</span></span><br></pre></td></tr></table></figure>
-<hr>
-<p>安装成功后，会在本路径下生成一个node_modules，里面包含了express框架代码并且其中会存放需要安装的NPM模块</p>
-<p>至此，Express安装完毕，我们可以在网站目录下建一个基于express的应用：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># express app</span></span><br><span class="line"><span class="comment"># cd app</span></span><br></pre></td></tr></table></figure>
-<hr>
-<p>在app文件夹内新建一个名为hello.js的文件，输入</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var http = require(<span class="string">"http"</span>);</span><br><span class="line">http.createServer(<span class="keyword">function</span>(request, response) &#123;</span><br><span class="line">	response.writeHead(<span class="number">200</span>, &#123;</span><br><span class="line">		<span class="string">"Content-Type"</span> : <span class="string">"text/plain"</span> // 输出类型</span><br><span class="line">	&#125;);</span><br><span class="line">	response.write(<span class="string">"Hello World"</span>);// 页面输出</span><br><span class="line">	response.end();</span><br><span class="line">&#125;).listen(<span class="number">8000</span>); // 监听端口号</span><br><span class="line">console.log(<span class="string">"nodejs start listen 8000 port!"</span>);</span><br></pre></td></tr></table></figure>
-<hr>
-<p>保存后输入下面指令运行</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># node hello.js</span></span><br></pre></td></tr></table></figure>
-<hr>
-<p>我到这里的时候报错</p>
-<p>Error: Cannot find module ‘xxxx’</p>
-<p>解决方案：<br>确定package.json里有添加相应的jade依赖配置，使用</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># npm install -d</span></span><br></pre></td></tr></table></figure>
-<hr>
-<p>可以自动配置package.json，并安装所有需要依赖的包，安装完成后再次运行</p>
-<p>在浏览器地址中输入<a href="http://（服务器地址或域名）：8000" target="_blank" rel="external">http://（服务器地址或域名）：8000</a></p>
-<p>浏览器显示如下</p>
-<p><img src="http://images2015.cnblogs.com/blog/758352/201511/758352-20151103095321633-1508683765.png" alt="图1.5" title="图1.5"></p>
-<h2 id="配置文件">配置文件</h2><p>下面配置Nginx,需要在Nginx中添加一个监听server来转发url请求，编辑Nginx的配置文件</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># vi /alidata/server/nginx-1.4.4/conf/nginx.conf</span></span><br></pre></td></tr></table></figure>
-<p><img src="http://images2015.cnblogs.com/blog/758352/201511/758352-20151103095630649-285247574.png" alt="图1.6" title="图1.6"></p>
-<hr>
-<p>在http大括号内添加一个server信息，监听启动端口80</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">        listen       <span class="number">80</span>;//监听<span class="number">80</span>端口</span><br><span class="line">        server_name  (服务器或域名，前面不加http://);</span><br><span class="line">        <span class="comment">#charset koi8-r;</span></span><br><span class="line">        <span class="comment">#access_log logs/host.access.log main;</span></span><br><span class="line">		location / &#123;</span><br><span class="line">			proxy_pass  http://（服务器或域名）:<span class="number">8000</span>;//设置转发的请求url</span><br><span class="line">			<span class="comment">#root  html;</span></span><br><span class="line">			<span class="comment">#index  index.html index.htm;</span></span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr>
-<p>重启nginx服务器</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># /etc/init.d/nginx restart</span></span><br></pre></td></tr></table></figure>
-<hr>
-<p>运行hello.js文件</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># node hello.js</span></span><br></pre></td></tr></table></figure>
-<hr>
-<p>在浏览器地址中输入<a href="http://（服务器地址或域名）" target="_blank" rel="external">http://（服务器地址或域名）</a></p>
-<p>浏览器中显示与之前一样</p>
-<p><img src="http://images2015.cnblogs.com/blog/758352/201511/758352-20151103095630649-285247574.png" alt="图1.7" title="图1.7"></p>
-<hr>
-<p>到此，就已经用Nginx和Node.js构建出了一个简单的项目。</p>
-<h2 id="Forever模块">Forever模块</h2><p>发现了一个问题，就是每次启动都需要输入一遍</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># node hello.js</span></span><br></pre></td></tr></table></figure>
-<hr>
-<p>这样很麻烦 而且一旦关闭控制台就停止运行，网站就无法打开，这是就需要使用forever模块</p>
-<p>安装forever模块</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># npm install forever -gd</span></span><br></pre></td></tr></table></figure>
-<hr>
-<p>通过下面的命令判断安装是否成功</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># forever --help</span></span><br></pre></td></tr></table></figure>
-<p><img src="http://images2015.cnblogs.com/blog/758352/201511/758352-20151103095905289-46673837.png" alt="图1.8" title="图1.8"></p>
-<hr>
-<p>使用forever运行hello.js项目</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># forever start hello.js</span></span><br></pre></td></tr></table></figure>
-<hr>
-<p>这样即使关闭控制台浏览器也能正常访问</p>
-<p>另外也可以用下面的命令运行项目</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># forever start -l forever.logo -o out.log -e err.log hello.js</span></span><br></pre></td></tr></table></figure>
-<hr>
-<p>-l 指定forever运行日志，-o指定脚本流水日志，-e指定脚本运行错误日志，启动后会生成out.log、err.log文件，运行成功后，使用如下指令查看进程是否启动运行：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># netstat -nap|grep node</span></span><br></pre></td></tr></table></figure>
-<hr>
-<p>如下图所示，8000端口正在运行</p>
-<p><img src="http://images2015.cnblogs.com/blog/758352/201511/758352-20151103095931930-1299544122.png" alt="图1.9" title="图1.9"></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
   
 </article>
 
 
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="nodejs2" data-title="Node.js下Mysql数据库连接" data-url="http://yoursite.com/2015/11/22/nodejs2/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
 
 
 
 
-
-  
-  
 </div>
       <footer id="footer">
   <div class="outer">
@@ -563,8 +358,8 @@
 		fancybox: true,
 		mathjax: true,
 		animate: true,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

@@ -3,17 +3,49 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Hexo</title>
+  <title>LINUX下用Nginx和Node.js构建一个简单的项目 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="由于我之前租了一个阿里云服务器，最近又开始学学Node.js，因此准备写点东西把过程记录一下。至于服务器上的Web环境安装阿里云有十分详细的安装说明，这里就略过了。。。
+以下是我的Web环境：
+服务器系统为LINUX 64位
+Web:nginx
+Nginx:1.4.4
+Php:5.3.29
+Mysql:5.1.73
+安装Nodejs首先需要查看系统的Python和Make版本信息是否符合Node.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LINUX下用Nginx和Node.js构建一个简单的项目">
+<meta property="og:url" content="http://yoursite.com/2015/11/22/nodejs1/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description">
+<meta property="og:description" content="由于我之前租了一个阿里云服务器，最近又开始学学Node.js，因此准备写点东西把过程记录一下。至于服务器上的Web环境安装阿里云有十分详细的安装说明，这里就略过了。。。
+以下是我的Web环境：
+服务器系统为LINUX 64位
+Web:nginx
+Nginx:1.4.4
+Php:5.3.29
+Mysql:5.1.73
+安装Nodejs首先需要查看系统的Python和Make版本信息是否符合Node.">
+<meta property="og:image" content="http://images2015.cnblogs.com/blog/758352/201511/758352-20151102211749602-70810128.png">
+<meta property="og:image" content="http://images2015.cnblogs.com/blog/758352/201511/758352-20151102211841383-1803123096.png">
+<meta property="og:image" content="http://images2015.cnblogs.com/blog/758352/201511/758352-20151102212001258-2017079884.png">
+<meta property="og:image" content="http://images2015.cnblogs.com/blog/758352/201511/758352-20151102212036008-379952505.png">
+<meta property="og:image" content="http://images2015.cnblogs.com/blog/758352/201511/758352-20151102212135274-722429969.png">
+<meta property="og:image" content="http://images2015.cnblogs.com/blog/758352/201511/758352-20151103095321633-1508683765.png">
+<meta property="og:image" content="http://images2015.cnblogs.com/blog/758352/201511/758352-20151103095630649-285247574.png">
+<meta property="og:image" content="http://images2015.cnblogs.com/blog/758352/201511/758352-20151103095630649-285247574.png">
+<meta property="og:image" content="http://images2015.cnblogs.com/blog/758352/201511/758352-20151103095905289-46673837.png">
+<meta property="og:image" content="http://images2015.cnblogs.com/blog/758352/201511/758352-20151103095931930-1299544122.png">
+<meta property="og:updated_time" content="2015-11-22T12:16:20.624Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
-<meta name="twitter:description">
+<meta name="twitter:title" content="LINUX下用Nginx和Node.js构建一个简单的项目">
+<meta name="twitter:description" content="由于我之前租了一个阿里云服务器，最近又开始学学Node.js，因此准备写点东西把过程记录一下。至于服务器上的Web环境安装阿里云有十分详细的安装说明，这里就略过了。。。
+以下是我的Web环境：
+服务器系统为LINUX 64位
+Web:nginx
+Nginx:1.4.4
+Php:5.3.29
+Mysql:5.1.73
+安装Nodejs首先需要查看系统的Python和Make版本信息是否符合Node.">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -190,198 +222,7 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap">
-  
-    <article id="post-jquery1" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/11/22/jquery1/" class="article-date">
-  	<time datetime="2015-11-22T12:36:57.904Z" itemprop="datePublished">2015-11-22</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/11/22/jquery1/">jquery之.outerWidth()</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>.outerWidth( [includeMargin ] )中文API文档中是这样解释的：<br>获取元素集合中第一个元素的当前计算宽度值,包括padding，border和选择性的margin。（愚人码头注：返回一个整数（不包含“px”）表示的值，或如果在一个空集合上调用该方法，则会返回 null。）</p>
-<p>它有一个可选参数，且该参数只能为布尔值，当传入的参数为ture时，他返回的宽度值为元素的width+padding+border+margin，但是当传入的参数为false时，他返回的宽度值为元素的width+padding+border，相当于元素在IE盒子模型中的宽度，如果不传参数相当于默认为false。</p>
-<p>.outerHeight()与.outerWidth()用法基本一致</p>
-<p><img src="http://images2015.cnblogs.com/blog/758352/201511/758352-20151104202623461-1273049679.png" alt="图jquery1.1" title="图jquery1.1"></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-css1" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/11/22/css1/" class="article-date">
-  	<time datetime="2015-11-22T12:34:13.978Z" itemprop="datePublished">2015-11-22</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/11/22/css1/">CSS ::selection 选中文字效果</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>::selection伪元素，用来定义用户鼠标已选择内容的样式</p>
-<h2 id="测试代码：">测试代码：</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">p::selection&#123; </span><br><span class="line">  background: <span class="comment">#45caaf; </span></span><br><span class="line">  color: <span class="comment">#fff;</span></span><br><span class="line">&#125; </span><br><span class="line">p::-moz-selection&#123; </span><br><span class="line">  background: <span class="comment">#45caaf; </span></span><br><span class="line">  color: <span class="comment">#fff;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="效果图：">效果图：</h2><p><img src="http://images2015.cnblogs.com/blog/758352/201511/758352-20151103135351336-211621706.png" alt="图css1.1" title="图css1.1"></p>
-<hr>
-<p>从下面可以看出兼容性上还是比较好的，各大主流浏览器都支持，需要注意的是不支持IE8以下的版本，firefox浏览器下需要添加-moz-前缀，chrome浏览器无须添加前缀。</p>
-<p><img src="http://images2015.cnblogs.com/blog/758352/201511/758352-20151103135830071-1766029761.png" alt="图css1.2" title="图css1.2"></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-nodejs2" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/11/22/nodejs2/" class="article-date">
-  	<time datetime="2015-11-22T12:29:10.669Z" itemprop="datePublished">2015-11-22</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/11/22/nodejs2/">Node.js下Mysql数据库连接</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>MySQL是一个关系型数据库管理系统，关联数据库将数据保存在不同的表中，而不是将所有的数据放在一个大仓库内，这样就增加了速度并提高了灵活性。</p>
-<h2 id="创建mysql连接">创建mysql连接</h2><p>与其他模块一样，需要在项目根目录下安装mysql模块</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># vim /etc/profile</span></span><br></pre></td></tr></table></figure>
-<hr>
-<p>MYSQL有server和client两个模块，client是用来连接server的。关于两者的区别，mysql-server相当于服务器，管理数据库运行并处理数据，mysql-client相当于客户端，帮助用户访问和操作数据库。</p>
-<p>在相对应的js文件中创建mysql连接对象</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">var mysql = require(<span class="string">'mysql'</span>);</span><br><span class="line">var con = mysql.createConnection(&#123;</span><br><span class="line">　　host:<span class="string">'localhost'</span>,　　//mysql服务器，本地为localhost</span><br><span class="line">　　user:<span class="string">'admin'</span>,　　//连接mysql的用户名</span><br><span class="line">　　password:<span class="string">'123456'</span>,　　//连接mysql的密码</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">//判断是否成功链接</span><br><span class="line">connection.connect(<span class="keyword">function</span>(err)&#123;</span><br><span class="line">　　console.log(<span class="string">'connection success'</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">//关闭数据库连接</span><br><span class="line">connection.end(<span class="keyword">function</span>(err)&#123;</span><br><span class="line">　　console.log(<span class="string">'connection close'</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<h2 id="数据库连接">数据库连接</h2><p>首先建立一个Node.js的MySQL操作基类BaseModel，其中包含数据库连接、插入、修改、删除、条件获取数据列表和数据转义等操作方法。</p>
-<p>创建一个js文件，命名为basemodel.js。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">module.exports = <span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">  //数据查询接口</span><br><span class="line">  this.findOneById = <span class="keyword">function</span>(tableName,id,callback)&#123;&#125;;</span><br><span class="line"></span><br><span class="line">  //数据插入接口</span><br><span class="line">  this.insert = <span class="keyword">function</span>(tableName,rowInfo,acllback)&#123;&#125;;</span><br><span class="line"></span><br><span class="line">  //数据修改接口</span><br><span class="line">  this.modify = <span class="keyword">function</span>(tableName,id,rowInfo,callback)&#123;&#125;;</span><br><span class="line"></span><br><span class="line">  //数据删除接口</span><br><span class="line">  this.remove = <span class="keyword">function</span>(table,id,callback)&#123;&#125;;</span><br><span class="line"></span><br><span class="line">  //数据条件查询接口</span><br><span class="line">  this.find = <span class="keyword">function</span>(tableName,<span class="built_in">where</span>Json,orderByJson,<span class="built_in">limit</span>Arr,fieldsArr,callback)&#123;&#125;;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">function</span> <span class="function"><span class="title">__constructor</span></span>()&#123;&#125;;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<hr>
-<p>再创建一个名为util.js工具类用于存放一些公有方法，包含json配置文件解析的方法。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">var fs = require(<span class="string">'fs'</span>),</span><br><span class="line">util = require(<span class="string">'util'</span>);</span><br><span class="line">exports.get = <span class="keyword">function</span>(fileName,key)&#123;</span><br><span class="line">  var configJson = &#123;&#125;;</span><br><span class="line">  try&#123;</span><br><span class="line"></span><br><span class="line">    //以utf8格式同步读取配置文件信息</span><br><span class="line">    var str = fs.readFileSync(fileName,<span class="string">'utf8'</span>);</span><br><span class="line"></span><br><span class="line">    //将读取后的配置文件内容转化为json对象</span><br><span class="line">    configJson = JSON.parse(str);</span><br><span class="line">  &#125;catch(e)&#123;</span><br><span class="line">    sys.debug(<span class="string">'JSON parse fail'</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  //返回需要的配置信息的值</span><br><span class="line">  <span class="built_in">return</span> configJson[key];</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<hr>
-<p>创建一个名为config.json的配置文件，存放数据库配置信息。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"db"</span>:&#123;</span><br><span class="line">        <span class="string">"host"</span>:<span class="string">"localhost"</span>,</span><br><span class="line">        <span class="string">"port"</span>:<span class="string">"3306"</span>,</span><br><span class="line">        <span class="string">"user"</span>:<span class="string">"root"</span>,</span><br><span class="line">        <span class="string">"password"</span>:<span class="string">"password"</span>,</span><br><span class="line">        <span class="string">"dbName"</span>:<span class="string">"dbname"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr>
-<p>然后在创建的项目文件中进行操作，例如在app.js中，先声明变量Util和dbClient。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var Util = require(<span class="string">'./util'</span>),//引入util.js工具类</span><br><span class="line">mysql = require(<span class="string">'mysql'</span>),//获取mysql模块对象</span><br><span class="line">dbClient;//全局的mysql连接句柄</span><br></pre></td></tr></table></figure>
-<hr>
-<p>实例化BaseModel对象。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var BaseModel = require(<span class="string">'./base_model'</span>);//引入base_model基类</span><br><span class="line">var baseModel = new BaseModel();//实例化baseModel对象</span><br></pre></td></tr></table></figure>
-<hr>
-<p>应用util工具类模块，实现BaseModel的构造函数。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">__constructor</span></span>()&#123;</span><br><span class="line">  //读取config.json配置文件，并获取其中db的配置信息</span><br><span class="line">  var dbConfig = Util.get(<span class="string">'config.json'</span>,<span class="string">'db'</span>);</span><br><span class="line"></span><br><span class="line">  client = &#123;&#125;;//获取mysql的配置信息</span><br><span class="line">  client.host = dbConfig[<span class="string">'host'</span>];//读取配置文件中mysql的host值</span><br><span class="line">  client.port = dbConfig[<span class="string">'port'</span>];//读取配置文件中mysql的port值</span><br><span class="line">  client.user = dbConfig[<span class="string">'user'</span>];//读取配置文件中mysql的数据库用户名</span><br><span class="line">  client.password = dbConfig[<span class="string">'password'</span>];//读取配置文件中mysql的数据库密码</span><br><span class="line"></span><br><span class="line">  //创建mysql连接</span><br><span class="line">  dbClient = mysql.createConnection(client);//创建mysql连接对象</span><br><span class="line">  dbClient.connect();//连接mysql服务器</span><br><span class="line"></span><br><span class="line">  //连接mysql服务器指定的数据库</span><br><span class="line">  dbClient.query(<span class="string">'USE '</span> + dbConfig[<span class="string">'dbName'</span>],<span class="keyword">function</span>(error,results)&#123;</span><br><span class="line">    <span class="keyword">if</span>(error)&#123;</span><br><span class="line">      console.log(<span class="string">'ClientConnectionReady Error: '</span> + error.message);</span><br><span class="line">      dbClient.end();</span><br><span class="line">    &#125;</span><br><span class="line">    console.log(<span class="string">'connection local mysql success'</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br><span class="line">__constructor();</span><br></pre></td></tr></table></figure>
-<hr>
-<p>测试数据库连接</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># node app.js</span></span><br></pre></td></tr></table></figure>
-<p><img src="http://images2015.cnblogs.com/blog/758352/201511/758352-20151119110043811-402406524.png" alt="图2.1" title="图2.1"></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-nodejs1" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-nodejs1" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2015/11/22/nodejs1/" class="article-date">
@@ -397,12 +238,19 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/11/22/nodejs1/">LINUX下用Nginx和Node.js构建一个简单的项目</a>
+    <h1 class="article-title" itemprop="name">
+      LINUX下用Nginx和Node.js构建一个简单的项目
     </h1>
   
 
       </header>
+      
+      <div class="article-info article-info-post">
+        
+        
+
+        <div class="clearfix"></div>
+      </div>
       
     
     <div class="article-entry" itemprop="articleBody">
@@ -519,27 +367,66 @@
       
     </div>
     
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
   </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/11/22/nodejs2/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          Node.js下Mysql数据库连接
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
   
 </article>
 
 
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="nodejs1" data-title="LINUX下用Nginx和Node.js构建一个简单的项目" data-url="http://yoursite.com/2015/11/22/nodejs1/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
 
 
 
 
-
-  
-  
 </div>
       <footer id="footer">
   <div class="outer">
@@ -563,8 +450,8 @@
 		fancybox: true,
 		mathjax: true,
 		animate: true,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
