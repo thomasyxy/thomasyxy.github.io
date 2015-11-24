@@ -194,6 +194,79 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-review1" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/11/24/review1/" class="article-date">
+  	<time datetime="2015-11-24T15:15:11.895Z" itemprop="datePublished">2015-11-24</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/11/24/review1/">CSS 回顾总结：HTML标签</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>HTML 为由一对尖括号（&lt;&gt;）所括起来的内容以特定含义. 这样的标识称为一个 标签 开始标签可能包含一些信息，这些信息叫做元素的属性，包括两部分:<br>属性名<br>属性值</p>
+<h2 id="doctype">doctype</h2><p>首先当然是所有遵循html5标准的页面都要有的一个标签&lt;!DOCTYPE html&gt;，这个超简单的 doctype 会让浏览器进入到标准渲染模式，即使是那些现在还不支持 HTML5 的浏览器，它们会以固有的模式解析 HTML 内容，并忽略不支持的HTML5 特性。</p>
+<h2 id="段落与区块">段落与区块</h2><p>以div和p标签为例，二者有什么区别？<br>1.div就是普通的块标签，多用于布局；p是语义化的段落标签，用于文章分段<br>2.div默认没有边距，p标签为了表示文章分段，有默认的间距</p>
+<h2 id="table">table</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">//代码示例：</span><br><span class="line">&lt;table cellpadding=<span class="string">"4"</span> cellspacing=<span class="string">"10"</span> border=<span class="string">"1"</span> width=<span class="string">"100%"</span>&gt;</span><br><span class="line">    &lt;thead&gt;</span><br><span class="line">        &lt;caption&gt;Table&lt;/caption&gt;</span><br><span class="line">        &lt;colgroup&gt;</span><br><span class="line">	        &lt;col span=<span class="string">"2"</span> align=<span class="string">"left"</span>&gt;</span><br><span class="line">	        &lt;col align=<span class="string">"right"</span>&gt;</span><br><span class="line">      	&lt;/colgroup&gt;</span><br><span class="line">        &lt;th&gt;A&lt;/th&gt;</span><br><span class="line">        &lt;th&gt;B&lt;/th&gt;</span><br><span class="line">        &lt;th&gt;C&lt;/th&gt;</span><br><span class="line">    &lt;/thead&gt;</span><br><span class="line">    &lt;tbody&gt;</span><br><span class="line">        &lt;tr&gt;</span><br><span class="line">            &lt;td align=<span class="string">"right"</span>&gt;<span class="number">00</span>&lt;/td&gt;</span><br><span class="line">            &lt;td valign=<span class="string">"bottom"</span>&gt;<span class="number">01</span>&lt;/td&gt;</span><br><span class="line">            &lt;td&gt;<span class="number">02</span>&lt;/td&gt;</span><br><span class="line">        &lt;/tr&gt;</span><br><span class="line">        &lt;tr&gt;</span><br><span class="line">            &lt;td&gt;<span class="number">10</span>&lt;/td&gt;</span><br><span class="line">            &lt;td&gt;<span class="number">11</span>&lt;/td&gt;</span><br><span class="line">            &lt;td&gt;<span class="number">12</span>&lt;/td&gt;</span><br><span class="line">        &lt;/tr&gt;</span><br><span class="line">    &lt;/tbody&gt;</span><br><span class="line">    &lt;tfoot&gt;</span><br><span class="line">        &lt;td&gt;<span class="number">20</span>&lt;/td&gt;</span><br><span class="line">        &lt;td&gt;<span class="number">21</span>&lt;/td&gt;</span><br><span class="line">        &lt;td&gt;<span class="number">22</span>&lt;/td&gt;</span><br><span class="line">    &lt;/tfoot&gt;</span><br><span class="line">&lt;/table&gt;</span><br></pre></td></tr></table></figure>
+<p>table标签的格式大致就是这样，HTML中table标签 ( table ) 用来展示多行的数据</p>
+<p>table的主要属性<br>1.border：边框<br>2.cellpadding：单元的内边距<br>3.cellspacing：单元的外边距<br>4.width：table宽度<br>5.bgcolor：表格的背景颜色<br>6.align：表格相对周围元素的对其方式</p>
+<p>如今table已经很少用于布局，多用于展示数据和提交表单</p>
+<h2 id="a标签">a标签</h2><p>作用：定义超链接，用于从一个页面链接到另一个页面。</p>
+<p>这是一种最常用的方式，但a标签不仅仅只有这种用法<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a target=<span class="string">"_blank"</span> href=<span class="string">"http://www.baidu.com/"</span>&gt;百度&lt;/a&gt;</span><br></pre></td></tr></table></figure></p>
+<p>将href属性的值设成 mailto:邮箱地址，点击时可以让浏览器自动调用系统默认的邮件客户端程序，同时在邮件编辑窗口的收件人设置栏中自动写上收件人的地址，而其他的内容都是空白，留给访问者自行填写<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=<span class="string">"mailto:xxx@xx.com"</span>&gt;写信&lt;/a&gt;</span><br></pre></td></tr></table></figure></p>
+<p>将href属性的值设成一个标签的id名，点击时可以让页面回到该标签所在的位置<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=<span class="string">"#div"</span>&gt;toWhere&lt;/a&gt;</span><br></pre></td></tr></table></figure></p>
+<p>target属性<br>_self： 默认，在当前选项卡打开，替换当前页面<br>_blank：新的选项卡打开<br>_parent：在父框架中打开<br>_top: 在最顶层打开<br>framename：在指定的框架中打开被链接文档</p>
+<h2 id="button">button</h2><p>name：button的名称，与表单数据一起提交</p>
+<p>type：button的类型<br>1.submit:  此按钮提交表单数据给服务器。未指定时，此值为默认值，或者如果此属性动态变为空值或无效值<br>2.reset:  此按钮重置所有组件为初始值<br>3.button: 此按钮没有默认行为。它可以有与元素事件相关的客户端脚本，当事件出现时可触发</p>
+<p>value：button的初始值</p>
+<h2 id="input">input</h2><p>作用：用于搜集用户信息，根据不同的 type 属性值，输入字段拥有很多种形式。输入字段可以是文本字段、复选框、掩码后的文本控件、单选按钮、按钮等等<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;form action=<span class="string">"getform.php"</span> method=<span class="string">"get"</span>&gt;</span><br><span class="line">    &lt;label&gt;First name: &lt;input <span class="built_in">type</span>=<span class="string">"text"</span> name=<span class="string">"first_name"</span> /&gt;&lt;/label&gt;&lt;br /&gt;</span><br><span class="line">     &lt;label&gt;Last name: &lt;input <span class="built_in">type</span>=<span class="string">"text"</span> name=<span class="string">"last_name"</span> /&gt;&lt;/label&gt;&lt;br /&gt;</span><br><span class="line">        &lt;label&gt;E-mail: &lt;input <span class="built_in">type</span>=<span class="string">"email"</span> name=<span class="string">"user_email"</span> /&gt;&lt;/label&gt;&lt;br /&gt;</span><br><span class="line">&lt;input <span class="built_in">type</span>=<span class="string">"submit"</span> value=<span class="string">"Submit"</span> /&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure></p>
+<p>type：控件类型的显示. 默认的类型是text<br>1.button: 无缺省行为按钮<br>2.checkbox: 复选框。必须使用 value 属性定义此控件被提交时的值。使用checked 属性指示控件是否被选择。也可以使用 indeterminate 指示复选框在一种不确定状态  (大多数平台上，显示为一条穿过复选框的水平线）<br>3.file: 此控件可以让用户选择文件。使用 accept 属性可以定义控件可以选择的文件类型<br>4.hidden：不显示在页面上的控件，但它的值会被提交到服务器<br>5.image: 图片提交按钮。必须使用 src 属性定义图片的来源及使用 alt 定义替代文本。还可以使用 height 和 width 属性以像素为单位定义图片的大小<br>6.password：一个值被遮盖的单行文本字段。使用 maxlength 指定可以输入的值的最大长度<br>7.radio：单选按钮。必须使用 value 属性定义此控件被提交时的值。使用checked 必须指示控件是否缺省被选择。在同一个”单选按钮组“中，所有单选按钮的 name 属性使用同一个值； 一个单选按钮组中是，同一时间只有一个单选按钮可以被选择<br>8.reset: 用于将表单所内容设置为缺省值的按钮<br>9.submit: 提交表单按钮<br>10.text: 单行字段；换行会将自动从输入的值中移除</p>
+<p>另外在html5中input标签的type新增了许多种，例如email、date、color、search、url……<a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/input" title="input" target="_blank" rel="external">了解更多</a></p>
+<h2 id="img">img</h2><p>代表文档中的一个图像<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;img width=<span class="string">"60%"</span> src=<span class="string">"xxx.jpg"</span> alt=<span class="string">"图片替代文案"</span>/&gt;</span><br></pre></td></tr></table></figure></p>
+<p>属性<br>src：图片地址<br>alt： 图片因为网络等原因未成功加载时候的显示文案内容<br>width/height：可以是像素值或者相对于父容器的百分比，两个属性仅设置一个，另外一个值会按相应等比缩放</p>
+<p>name、hspace、border、align等属性已经被废弃，但是html5新增了crossorigin、sizes、srcset等<a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/img" title="img" target="_blank" rel="external">了解更多</a></p>
+<p>img标签是最常用的标签之一，几乎所有网站中都会用到，他支持几乎所有的图片格式</p>
+<h2 id="h1~h6">h1~h6</h2><p>作用：可定义标题，</p><h1> h1:定义最大的标题<h6> h6:定义最小的标题<br>h1~h6标签原先是用于设置标题，但是随着搜索引擎进化，有了额外的作用，如h1标签，对于搜索引擎而言，他的重要性仅次于title标签和keywords<p></p>
+</h6></h1>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
     <article id="post-jquery1" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
