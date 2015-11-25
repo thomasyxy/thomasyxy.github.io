@@ -198,7 +198,7 @@
   
     <div class="article-meta">
       <a href="/2015/11/25/review2/" class="article-date">
-  	<time datetime="2015-11-25T07:47:32.748Z" itemprop="datePublished">2015-11-25</time>
+  	<time datetime="2015-11-25T13:00:47.146Z" itemprop="datePublished">2015-11-25</time>
 </a>
     </div>
   
@@ -211,7 +211,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2015/11/25/review2/">回顾总结：CSS</a>
+      <a class="article-title" href="/2015/11/25/review2/">回顾总结：CSS语法</a>
     </h1>
   
 
@@ -222,9 +222,15 @@
       
         <p>CSS由多组规则组成，每个规则由“选择器”（selector）、“属性”（property）和“值”（value）组成：</p>
 <p>选择器（Selector）:多个选择器可以半角逗号（,）隔开。<br>属性（property）:CSS1、CSS2、CSS3规定了许多的属性，目的在控制选择器的样式。<br>值（value）:指属性接受的设置值，多个关键字时大都以空格隔开。<br>属性和值之间用半角冒号：隔开，属性和值合称为“特性”。多个特性间用；隔开，前后用{}括起来</p>
+<h2 id="优先级">优先级</h2><p>CSS优先级规则：越接近目标的样式定义优先级越高，高优先级样式将继承低优先级样式的未重叠定义但覆盖重叠的定义<br>就是当目标为同一元素时，样式优先级排序：<br>1.元素标签内定义的样式<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div style=<span class="string">"color:#fff"</span>&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<p>2.写在style标签内的样式<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;style <span class="built_in">type</span>=<span class="string">"text/css"</span>&gt;</span><br><span class="line">    <span class="comment">#div1&#123;</span></span><br><span class="line">        color:<span class="comment">#fff;</span></span><br><span class="line">    &#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure></p>
+<p>3.在style中使用@import导入的CSS样式（尽量少用）<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;style <span class="built_in">type</span>=<span class="string">"text/css"</span>&gt;</span><br><span class="line">    @import<span class="string">"style.css"</span>;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure></p>
+<p>4.在head内用link标签引入的样式<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;link href=”style.css” rel=”stylesheet” <span class="built_in">type</span>=”text/css” /&gt;</span><br></pre></td></tr></table></figure></p>
 <h2 id="浏览器前缀">浏览器前缀</h2><p>有些新式的CSS样式并不是所有的浏览器都支持，一些浏览器率先支持了，或者不是所有的浏览器支持情况都一样，我们需要前缀写法<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Firefox: -moz-</span><br><span class="line">Safari/Chrome: -webkit-</span><br><span class="line">Opera: -o-</span><br><span class="line">IE: -ms-</span><br></pre></td></tr></table></figure></p>
 <p>如果对该样式的浏览器支持不确定，可以前往<a href="http://caniuse.com/" title="caniuse" target="_blank" rel="external">caniuse</a>查找</p>
-<p>对于重复属性设置，优先级高的覆盖优先级低的，相同的优先级后面的覆盖前面的</p>
+<h2 id="CSS缩写">CSS缩写</h2><p>1.尺寸缩写：如margin、padding、border等，可以设置四个值，依次表示top，right，bottom，left<br>2.属性缩写：如font、background、border可以写成以下的形式<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">//font</span><br><span class="line">font-weight: bold;</span><br><span class="line">font-size: <span class="number">15</span>px;</span><br><span class="line">line-height: <span class="number">30</span>px;</span><br><span class="line">font-family: SimHei;</span><br><span class="line"></span><br><span class="line">font:bold <span class="number">15</span>px/<span class="number">30</span>px SimHei;</span><br><span class="line"></span><br><span class="line">//background</span><br><span class="line">background-color: <span class="comment">#000;</span></span><br><span class="line">background-image: url(/img/bg.jqg);</span><br><span class="line">background-repeat: no-repeat;</span><br><span class="line">background-attachment: fixed;//背景图片是否固定，默认为scroll</span><br><span class="line">background-position: <span class="number">0</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">background:<span class="comment">#000 url(/img/bg.jpg) no-repeat fixed 0 0;</span></span><br><span class="line"></span><br><span class="line">//border</span><br><span class="line">border-width: <span class="number">1</span>px;</span><br><span class="line">border-style: solid;</span><br><span class="line">border-color: <span class="comment">#000;</span></span><br><span class="line"></span><br><span class="line">border:<span class="number">1</span>px solid <span class="comment">#000;</span></span><br></pre></td></tr></table></figure></p>
+<p>3.数值缩写：#000000可以缩写为#000或者直接用英文black表示</p>
+<h2 id="大小写">大小写</h2><p>CSS中一般不区分大小写，但是选择器的id和class名称中大小写会被区分开来</p>
 
       
     </div>
